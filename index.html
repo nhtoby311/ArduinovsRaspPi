@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>HomeWork</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            /* height:1000px; */
+        }
+        :root{
+            --main-color-light: #F6F5F1;
+            --secondary-color-dark: #5f5f79;
+            --border-width: 5px;
+            --corner-size: 20px;
+            --border-color: black;
+        }
+        html
+        {
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: var(--main-color-light);
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif; 
+            /*position:relative;*/
+        }
+        
+        section
+        {
+            position: relative;
+            padding: 3.9rem 0;
+        }
+                
+         
+        img
+        {
+           width: 100%; 
+           box-shadow: 9px 6px 15px grey;
+        }
+        a
+        {
+            text-decoration: none;
+        }
+        p
+        {
+            font-size: 1.6rem;
+        }
+        
+        
+        .container
+        {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2.4rem;
+        }
+        
+        /* header */
+        header
+        {
+            position:fixed;
+            width: 100vw;
+            height:6rem;
+            top:0;
+            left:0;
+            z-index:10;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+            display:flex;   
+            align-items: center;
+        }
+        .logo
+        {
+            color: var(--main-color-light);
+            position: absolute;
+            top:35px;
+            left:2.5rem;
+            cursor: pointer;
+            z-index: 150;
+            font-size:20px;
+            text-transform: uppercase;
+        }
+        .nav
+        {
+            display:flex;
+            justify-content: flex-end;
+        }
+        .menu
+        {
+            
+            display:none;
+        }
+        
+        .nav-list
+        {
+            list-style: none;
+            position: initial;
+            height:initial;
+            width:initial;
+            background-color: transparent;
+            display:flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-around;
+            transform: initial; 
+            transition: initial;
+        }
+        
+        .nav-item
+        {
+            margin: 0 2.4rem;
+        }
+        
+        .nav-item:last-child
+        {
+            margin-right:0;
+        }
+        
+        .nav-link
+        {
+            color: var(--main-color-light);
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .nav-link:hover
+        {
+            color: #FCCD12;
+            transition: 1s;
+        }
+        
+        .intro
+        {
+            
+            background-image: url(https://images.unsplash.com/photo-1592659762303-90081d34b277?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            width: 100vw;
+            height:100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+        }
+        .intro h1
+        {
+            font-size: 60px;
+            color: #d9d9d9;
+            text-transform: uppercase;
+            text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 5px 3px rgba(0, 0, 0, 0.63);
+        }
+
+
+
+        /* Table Start*/
+        
+        .table
+        {
+            margin-top: 5rem;
+            display:flex;
+            justify-content: center;
+        }
+        
+        table {
+          border-collapse: collapse;
+          width: 80%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 18px 5px;
+        }
+        
+        th:last-child,
+        td:last-child,
+        th:nth-last-child(2),
+        td:nth-last-child(2) {
+            text-align: center;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        
+        .box
+        {
+            background: rgb(253,113,29);
+            background: linear-gradient(90deg, rgba(253,113,29,1) 0%, rgba(252,176,69,1) 100%);
+            width: 22vw;
+            height: 280px;
+            min-width: 200px;
+            position: absolute;
+            margin-left: 10rem;
+            margin-top: 18rem;
+            border-width: 9px;
+            z-index: 1;
+            
+        }
+        
+        .box::before,
+                .box::after {
+                    content: "";
+                    position: absolute;
+                    width:var(--corner-size);
+                    height:var(--corner-size);
+                    border:var(--border-width) solid var(--border-color);
+                }
+            
+                .box::before {
+                    left: 0;
+                    top: 0;
+                    border-bottom:none;
+                    border-right:none;
+                }
+            
+                .box::after {
+                    bottom: 0;
+                    right: 0;
+                    border-left:none;
+                    border-top:none;
+                }
+        
+        .box-head
+        {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            
+        }
+        .box-head::after
+        {
+            content:'Ar \A duino';
+            color: rgba(255,255,255,0.3);
+            line-height: 110px;
+            position: absolute;
+            font-size: 120px;
+            bottom:2%;
+            left:3%;
+            font-weight: 800;
+            font-style:italic;
+            text-transform: uppercase;
+        }
+        .box-head#ras::after
+        {
+            content:'Ras\A berry';
+        } 
+        .box-head#ras
+        {
+            background: rgb(247,4,242);
+            background: linear-gradient(90deg, rgba(247,4,242,1) 0%, rgba(86,88,174,1) 64%, rgba(0,222,137,1) 100%);
+        }
+
+    
+        
+        
+        
+        
+        .cont
+        {
+            background: rgb(4,167,146);
+            background: linear-gradient(90deg, rgba(4,167,146,1) 0%, rgba(1,249,238,0.9472163865546218) 100%);
+            width: 95%;
+            height: 400px;
+            display: flex;
+            margin-top: 10rem;
+            margin-left: 3rem;
+            position: relative;
+            box-shadow: 10px 13px 33px -8px rgba(0,0,0,0.3);
+        }
+        .cont#ras
+        {
+            background: rgb(84,6,157);
+            background: linear-gradient(90deg, rgba(84,6,157,1) 0%, rgba(20,159,255,1) 100%);
+        }
+
+        .cont::after
+        {
+            content: "UNO\A mega \A Leonardo";
+            color: rgba(255,255,255,0.3);
+            line-height: 110px;
+            position: absolute;
+            font-size: 100px;
+            width: 30%;
+            top:2%;
+            left:1%;
+            font-weight: 800;
+            font-style:italic;
+            text-transform: uppercase;
+        }
+        .cont#ras::after
+        {
+            width: 30%;
+            content: "Pi-Zero\A Pi 4 \A Pi 3 \A Pi 2 ";
+        }
+
+
+        .image-left
+        {
+            background-image: url(https://www.elektor.com/media/catalog/product/cache/80915e949b605ba30632933a1ad7c951/a/r/arduino-uno-r3.png);
+            position: absolute;
+            top: 15rem;
+            left: 20vw;
+            background-position: center;
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+            z-index: 3;
+        }
+
+        .image-left#ras 
+        {
+            background-image:url(https://hu.farnell.com/wcsstore/ExtendedSitesCatalogAssetStore/cms/asset/images/common/campaign/raspberrypi/pi-4-hero.png);
+            top: 23rem;
+            left: 20vw;
+            width: 400px;
+            height: 300px;
+        }
+        
+        .description
+        {
+            position:absolute;
+            right: 40px;
+            top: 10%;
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .description::before,
+                .description::after {
+                    content: "";
+                    position: absolute;
+                    width:var(--corner-size);
+                    height:var(--corner-size);
+                    border:var(--border-width) solid var(--border-color);
+                }
+            
+                .description::before {
+                    left: 0;
+                    top: 0;
+                    border-bottom:none;
+                    border-right:none;
+                }
+            
+                .description::after {
+                    bottom: 0;
+                    right: 0;
+                    border-left:none;
+                    border-top:none;
+                }
+        
+        .text-description
+        {
+            width: 75%;
+            color:black;
+        }
+        .container-image
+        {
+            position: absolute;
+            top: 15%;
+        }
+        
+        .btn-left
+        {
+            position:absolute;
+            padding: 30px 40px;
+            bottom:-2.5rem;
+            right: 20vw;
+            font-size: 20px;
+            background-color: rgb(12, 84, 143);
+            text-transform: uppercase;
+            color: #F6F5F1;
+            display: inline-block;
+            border:none;
+            cursor: pointer;
+            letter-spacing: 2.5px;
+            transition:1s;
+            box-shadow: 10px 13px 33px -8px rgba(0,0,0,0.61);
+        }
+
+        
+
+        
+        
+        
+        </style>
+        
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo animate-top">Microcontrollers</a>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#info" class="nav-link " >Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#compare" class="nav-link " >comparison</a>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="intro">
+        <h1>Microcontrollers</h1>
+    </div>
+
+    <!-- Intro start -->
+    
+        <section id="info">
+                <div class="container-image">
+                    <div class="box">
+                        <div class="box-head" >
+                        </div>
+                    </div> 
+                    <div class="image-left"></div>
+                </div>
+            
+                <div class="cont">   
+                    <div class="description">
+                        <p class="text-description">Arduino is an easy-to-use software and hardware. It consists of a circuit board, which can be controlled with Arduino IDE. Arduino is a beginer friendly microcontrollers, perfectly good for small projects due to its performance and price. 
+                        </p>
+                    </div>
+                    <form action="https://www.arduino.cc/en/guide/introduction">
+                        <button onclick="location.href=''" class="btn-left "> Learn more</button>
+                    </form>
+                </div>
+                
+        </section>
+        
+        
+        <!-- RasberryPi -->
+        
+        <section>
+            <div class="container-image">
+                <div class="box">
+                    <div class="box-head" id="ras">
+                    </div>
+                </div> 
+                <div class="image-left" id="ras"></div>
+            </div>
+        
+            <div class="cont" id="ras">   
+                <div class="description">
+                    <p class="text-description">Raspberry Pi is more like a small size computer than a microcontroller. It supports a variety range of programming language like Python, C++,.. With its performance, it's capable of doing many complex tasks like browsing Internet, playing games 
+                    
+                    </p>
+                </div>
+                <form action="https://www.raspberrypi.org/help/what-%20is-a-raspberry-pi/">
+                    <button onclick="location.href=''" class="btn-left "> Learn more</button>
+                </form>
+                
+            </div>
+        </section>
+        
+        
+        
+
+    <!-- Table Start -->
+    <section class="table" id="compare">
+        <table>
+            <tr>
+                <th>Features</th>
+                <th>RasberryPi</th>
+                <th>Arduino</th>
+            </tr>
+            <tr>
+                <td>Runs multiple programs at once</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+            </tr>
+            <tr>
+                <td>Expensive</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+            </tr>
+            <tr>
+                <td>On-board Storage</td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <td>Higher performance</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+            </tr>
+            <tr>
+                <td>Beginer friendly</td>
+                <td><i class="fas fa-times"></i></td>
+                <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <td>Built-in network capability</td>
+                <td><i class="fas fa-check"></i></td>
+                <td><i class="fas fa-times"></i></td>
+            </tr>
+           
+        </table>
+    </section>
+    <script>
+        /*var selector = document.getElementsByClassName('box-head');
+        window.alert(selector.length);*/
+    </script>
+</body>
+</html>
