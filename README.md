@@ -1,2 +1,2 @@
-# ArduinovsRasp
- HW that compares between Arduino and Raspberry Pi
+# ArduinovsRaspPi
+ HW - A Webpage that compares between Arduino and Raspberry Pi
